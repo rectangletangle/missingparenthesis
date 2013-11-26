@@ -1,0 +1,319 @@
+
+
+/* geom */
+
+*
+{
+  margin : 0px;
+}
+
+body
+{
+  margin-left : auto;
+  margin-right : auto;
+  width : 900px;
+}
+
+li
+{
+  margin-top : 16px;
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : 16px;
+  list-style-position : outside;
+}
+
+select
+{
+  padding : 2px;
+}
+
+#logo
+{
+  width : 160px;
+  height : 160px;
+  margin-top : -13px;
+  margin-left : -11px;
+  margin-bottom : -17px;
+}
+
+nav
+{
+  padding-top : 8px;
+  padding-left : 16px;
+  padding-bottom : 8px;
+}
+
+#nav_links
+{
+  display : inline;
+  margin-left : -1px;
+}
+
+nav > div a
+{
+  margin-right : 14px;
+}
+
+#cont
+{
+  width : 100%;
+  display : table;
+  margin-bottom : 8px;
+}
+
+#inset
+{
+  width : 80%;
+  margin-top : 16px;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+.sep
+{
+  width : 104%;
+  height : 1px;
+  margin-top : 16px;
+  margin-left : -2%;
+  margin-right : auto;
+  margin-bottom : 16px;
+}
+
+footer
+{
+  margin-left : auto;
+  margin-right : auto;
+  margin-bottom : 8px;
+}
+
+.arrow_left,
+.arrow_right
+{
+  display : inline-block;
+  width : 0;
+  height : 0;
+  margin-bottom : -1px;
+}
+
+.error > h1
+{
+  margin-top : -12px;
+}
+
+.error > p
+{
+  margin-bottom : 16px;
+}
+
+@media screen and (max-width : 980px)
+{
+  body
+  {
+    width : 90%;
+  }
+}
+
+/* style */
+
+*
+{
+  font-family : Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  color : #8c9090;
+  outline : none;
+  font-size : 16px;
+}
+
+::selection
+{
+  color : #000000;
+  background : #00e5ff;/*#ff5900;*/
+}
+
+::-moz-selection
+{
+  color : #000000;
+  background : #00e5ff;
+}
+
+::-webkit-scrollbar
+{
+  width : 16px;
+}
+
+::-webkit-scrollbar-track
+{
+  background : #1a1b1b;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background : #333030;
+
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+  background : #00e5ff;
+}
+
+span
+{
+  color : #b0b4b4;
+}
+
+body
+{
+  background : #1a1b1b;
+}
+
+select
+{
+  border : none;
+  background : #333030;
+  -webkit-appearance : none;
+  -moz-appearance : none;
+  -webkit-transition : all 0.1s ease-out;
+  -moz-transition : all 0.1s ease-out;
+  -ms-transition : all 0.1s ease-out;
+  -o-transition : all 0.1s ease-out;
+  transition : all 0.1s ease-out;
+}
+
+select:focus, select:hover
+{
+  color : #00e5ff;
+}
+
+a
+{
+  text-decoration : none;
+  border : none;
+
+  -webkit-transition : all 0.1s ease-out;
+  -moz-transition : all 0.1s ease-out;
+  -ms-transition : all 0.1s ease-out;
+  -o-transition : all 0.1s ease-out;
+  transition : all 0.1s ease-out;
+}
+
+a:hover,
+a:focus,
+.current_nav_link,
+a:hover *,
+a:focus *
+{
+  color : #00e5ff;
+  text-shadow : 0px 0px 1em rgba(0, 229, 255, 0.8);
+}
+
+.arrow_left
+{
+  border-top : 0.4em solid transparent;
+  border-bottom : 0.4em solid transparent;
+  border-right : 0.4em solid #8c9090;
+
+  -webkit-transition : all 0.1s ease-out;
+  -moz-transition : all 0.1s ease-out;
+  -ms-transition : all 0.1s ease-out;
+  -o-transition : all 0.1s ease-out;
+  transition : all 0.1s ease-out;
+}
+
+.arrow_left:hover,
+.arrow_left:focus
+{
+  border-right : 0.4em solid #00e5ff;
+}
+
+.arrow_right
+{
+  border-top : 0.4em solid transparent;
+  border-bottom : 0.4em solid transparent;
+  border-left : 0.4em solid #8c9090;
+
+  -webkit-transition : all 0.1s ease-out;
+  -moz-transition : all 0.1s ease-out;
+  -ms-transition : all 0.1s ease-out;
+  -o-transition : all 0.1s ease-out;
+  transition : all 0.1s ease-out;
+}
+
+.arrow_right:hover,
+.arrow_right:focus
+{
+  border-left : 0.4em solid #00e5ff;
+}
+
+li
+{
+  list-style-type : square;
+}
+
+#logo
+{
+  border : none;
+}
+
+#nav_links
+{
+  text-align : center;
+}
+
+nav
+{
+  background : #2b2828;
+  box-shadow : inset 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+nav > div a
+{
+  color : #b0b4b4;
+}
+
+#all
+{
+  box-shadow : 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+#cont
+{
+  background : #333030;
+  box-shadow : inset 0px 0px 3px 0px rgba(0, 0, 0, 0.1), 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  /*box-shadow : 1px 1px 4px 0px rgba(0, 0, 0, 0.1), inset 1px 1px 4px 0px rgba(0, 0, 0, 0.1);*/
+  /*box-shadow : 1px 1px 10px 0px rgba(0, 0, 0, 0.1), inset 0px 0px 4px 0px rgba(0, 0, 0, 0.3);*/
+}
+
+/*span
+{
+  color : #b0b4b4;
+}*/
+
+footer
+{
+  text-align : center;
+}
+
+footer *
+{
+  color : #b0b4b4;
+}
+
+.sep
+{
+  background : rgba(34, 35, 35, 0.9);
+  box-shadow : 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.error
+{
+  text-align : center;
+}
+
+.error > h1
+{
+  font-size : 122px;
+  font-weight : normal;
+  color : #00e5ff;
+}
+

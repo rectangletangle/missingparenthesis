@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main_link_class %}current_nav_link{% endblock %}
+
+{% block content %}
+
+{% for article in articles %}
+
+<article class="article_preview">
+
+  {% if article.thumbnail %}
+  <a href="{{ article.url }}" class="thumbnail_cont" tabindex="-1">
+    <img src="{{ article.thumbnail.image.url }}" class="thumbnail">
+  </a>
+  {% endif %}
+
+  <a href="{{ article.url }}">
+    <span class="title">{{ article.title }}</span>
+  </a>
+
+  <br>
+
+  <span class="author">
+  {% if article.author|length %}
+  by {{ article.author }}, on
+  {% endif %}
+  {{ article.pretty_date }}
+  </span>
+
+  <p>
+  {% if article.summary|length %}
+  {{ article.summary }}
+  {% else %}
+  {{ article.body|truncatechars:550 }}
+  {% endif %}
+  </p>
+
+  <div style="clear:both;"></div>
+
+  <a href="{{ article.url }}" class="arrow_right" tabindex="-1"></a>
+
+</article>
+
+<div class="sep"></div>
+
+{% endfor %}
+
+<a href="/archive" id="more">More...</a>
+
+{% endblock %}

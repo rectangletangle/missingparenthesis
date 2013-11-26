@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+
+  <head>
+
+    <meta name="keywords" content="missing, parenthesis, missingparenthesis, python, blog, programming, software, avgweather">
+    <meta name="description" content="This is a blog about my various software projects, and other daring exploits.">
+    <meta charset="UTF-8">
+
+    <title>Missing Parenthesis</title>
+
+    <link rel="shortcut icon" href="{{ STATIC_URL }}icons/missingparenthesis.ico">
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/site.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/info.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/faq.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/blog.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/article.css">
+
+    <script src="{{ STATIC_URL }}google-code-prettify/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/prettify.css">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41451246-1', 'missingparenthesis.com');
+      ga('send', 'pageview');
+     </script>
+
+  </head>
+
+  <body>
+
+    <a href="/" tabindex="-1" alt="Missing Parenthesis" title="Main Page"><img id="logo" src="{{ STATIC_URL }}images/missingparenthesis.png"></a>
+
+    <div id="all">
+
+      <nav>
+        <div id="nav_links">
+          <a id="main_link" href="/" class="{% block main_link_class %}{% endblock %}">Main</a>
+          <a id="archive_link" href="/archive" class="{% block archive_link_class %}{% endblock %}">Archive</a>
+          <a id="links_link" href="/links" class="{% block links_link_class %}{% endblock %}">Links</a>
+          <!--<a id="downloads_link" href="/downloads" class="{% block downloads_link_class %}{% endblock %}">Downloads</a>-->
+          <a id="about_link" href="/about" class="{% block about_link_class %}{% endblock %}">About</a>
+          <a id="faq_link" href="/faq" class="{% block faq_link_class %}{% endblock %}">FAQ</a>
+          <a id="contact_link" href="/contact" class="{% block contact_link_class %}{% endblock %}">Contact</a>
+        </div>
+      </nav>
+
+      <div id="cont">
+
+        <div id="inset">
+        {% block content %}
+        {% endblock %}
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Copyright &#xa9; {% now "Y" %} <a href="/" tabindex="-1">Missing Parenthesis</a></p>
+    </footer>
+
+  </body>
+
+</html>

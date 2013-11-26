@@ -1,0 +1,74 @@
+{% extends "base_info.html" %}
+
+{% block archive_link_class %}current_nav_link{% endblock %}
+
+{% block info_title %}Archive{% endblock %}
+
+{% block info_text %}
+
+{% if articles.paginator.num_pages > 1 %}
+<div>
+  {% if articles.has_previous %}
+  <a href="?page={{ articles.previous_page_number }}"><div class="arrow_left"></div></a>
+  {% endif %}
+
+  <select onchange="window.location=this.options[this.selectedIndex].value;"><!--background-image: url({{ STATIC_URL }}images/down_arrow_select.jpg);-->
+    {% for page_number in articles.paginator.page_range %}
+    <option {% if page_number == articles.number %}selected="selected"{% endif %} value="?page={{ page_number }}">{{ page_number }}</option>
+    {% endfor %}
+  </select>
+
+  {% if articles.has_next %}
+  <a href="?page={{ articles.next_page_number }}"><div class="arrow_right"></div></a>
+  {% endif %}
+</div>
+{% endif %}
+
+{% for article in articles %}
+
+<article class="archive">
+
+  <a href="{{ article.url }}">
+
+    <div class="thumbnail_cont">
+      <img src="{{ article.thumbnail.image.url }}" class="thumbnail">
+    </div>
+
+    <span class="title">{{ article.title }}</span>
+
+    <br>
+
+    <span class="author">
+    {% if article.author|length %}
+    by {{ article.author }}, on
+    {% endif %}
+    {{ article.pretty_date }}
+    </span>
+
+  </a>
+
+  <div style="clear:both;"></div>
+
+</article>
+
+{% endfor %}
+
+{% if articles.paginator.num_pages > 1 %}
+<div>
+  {% if articles.has_previous %}
+  <a href="?page={{ articles.previous_page_number }}"><div class="arrow_left"></div></a>
+  {% endif %}
+
+  <select onchange="window.location=this.options[this.selectedIndex].value;"><!--background-image: url({{ STATIC_URL }}images/down_arrow_select.jpg);-->
+    {% for page_number in articles.paginator.page_range %}
+    <option {% if page_number == articles.number %}selected="selected"{% endif %} value="?page={{ page_number }}">{{ page_number }}</option>
+    {% endfor %}
+  </select>
+
+  {% if articles.has_next %}
+  <a href="?page={{ articles.next_page_number }}"><div class="arrow_right"></div></a>
+  {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

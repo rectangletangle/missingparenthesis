@@ -1,0 +1,79 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="article_title">{{ article.title }}</h1>
+
+<div class="article_author">
+  {% if article.author|length %}
+  by {{ article.author }}, on
+  {% endif %}
+  {{ article.pretty_date }}
+</div>
+
+<div class="sep"></div>
+
+<div class="article_body">
+
+  {% if article.show_thumbnail and article.thumbnail %}
+  <img src="{{ article.thumbnail.image.url }}" class="article_thumbnail">
+  {% endif %}
+
+  {{ article.body|removetags:"script"|safe }}
+
+  {% if article.show_thumbnail and article.thumbnail %}
+  <div style="clear:both;"></div>
+  {% endif %}
+
+</div>
+
+{% if suggested_articles|length %}
+<div class="sep"></div>
+
+<span>Some suggested articles :</span>
+<br>
+<br>
+{% for suggested_article in suggested_articles %}
+<article class="suggested_article">
+
+  <a href="{{ suggested_article.url }}">
+
+    <div class="img_cont">
+      <img src="{{ suggested_article.thumbnail.image.url }}" class="suggested_article_thumbnail">
+    </div>
+
+    <span class="title">
+      {{ suggested_article.title }}
+    </span>
+
+  </a>
+
+</article>
+{% endfor %}
+
+{% endif %}
+
+<div class="sep"></div>
+
+<div id="disqus_thread">
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'missingparenthesis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+</div>
+
+<noscript id="disqus_noscript">
+  <p>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" style="text-decoration:underline;">comments powered by Disqus.</a></p>
+</noscript>
+
+{% endblock %}
+

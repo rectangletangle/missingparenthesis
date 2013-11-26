@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="error">
+  <h1>{% block error_number %}{% endblock %}</h1>
+  <p>{% block error_info %}{% endblock %}</p>
+</div>
+{% endblock %}
