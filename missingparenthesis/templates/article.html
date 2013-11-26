@@ -1,5 +1,4 @@
 
-
 {% extends "base.html" %}
 
 {% block content %}
@@ -21,7 +20,7 @@
   <img src="{{ article.thumbnail.image.url }}" class="article_thumbnail">
   {% endif %}
 
-  {{ article.body|removetags:"script"|safe }}
+  {{ article.body }}
 
   {% if article.show_thumbnail and article.thumbnail %}
   <div style="clear:both;"></div>
